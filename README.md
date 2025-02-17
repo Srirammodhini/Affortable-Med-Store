@@ -1,1 +1,1 @@
-# Medical Store Management Store
+Affordable Medical Store
