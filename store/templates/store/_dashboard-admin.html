@@ -1,0 +1,151 @@
+{% load static %}
+
+<div class="dashboard_header" id="sidebarToggleButton">
+    <div class="dasboard_sidebar">
+        <nav class="sidenav_bar sidenav-d-none" id="sideNavBar">
+
+            <div class="dashboard_logo">
+                <div class="logo_flex">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.Zj_n3e57ssjLhwmw06Xs0AHaHa&pid=Api&P=0&h=180" alt="" class="img-responsive">
+
+                    <span class="text">
+                       Affordable Medical Store
+                    </span>
+                </div>
+            </div>
+
+            <hr class="hr_sidenav">
+
+            <div class="sidebar_main">
+                <ul class="sidebar">
+                    <li class="sidebar_item">
+                        <a href="{% url 'store:dashboard-admin' %}" class="item_link">
+                           
+                            <span class="item_text sidebar_active">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+                    <li class="sidebar_item">
+                        <a class="item_link" id="dealerID">
+                            
+                            <span class="item_text">
+                                Dealers
+                            </span>
+                        </a>
+
+                        <div class="dealer__items" id="dealerItems">
+                            <a href="{% url "store:add-dealer" %}" class="dealer__item">
+                                > Add Dealer
+                            </a>
+                            <a href="{% url "store:view-dealers" %}" class="dealer__item">
+                                > View Dealers
+                            </a>
+                        </div>
+                    </li>
+                    <li class="sidebar_item">
+                        <a class="item_link" id="medicineID">
+                          
+                            <span class="item_text">
+                                Medicines
+                            </span>
+                        </a>
+
+                        <div class="medicine__items" id="medicineItems">
+                            <a href="{% url 'store:add-medicine' %}" class="dealer__item">
+                                > Add Medicine
+                            </a>
+                            <a href="{% url 'store:view-medicines' %}" class="dealer__item">
+                                > View Medicines
+                            </a>
+                        </div>
+                    </li>
+                    
+                        
+                    
+                    <li class="sidebar_item">
+                        <a class="item_link" id="customerID">
+                           
+                            <span class="item_text">
+                                Customers
+                            </span>
+                        </a>
+
+                        <div class="customer__items" id="customerItems">
+                            <a href="{% url 'store:add-customer' %}" class="dealer__item">
+                                > Add Customer
+                            </a>
+                            <a href="{% url 'store:view-customers' %}" class="dealer__item">
+                                > View Customers
+                            </a>
+                        </div>
+                    </li>
+                    <li class="sidebar_item" id="purchaseID">
+                        <a class="item_link">
+                          
+                            <span class="item_text">
+                                Purchases
+                            </span>
+                        </a>
+
+                        <div class="purchase__items" id="purchaseItems">
+                            <a href="{% url 'store:view-purchases' %}" class="dealer__item">
+                                > View Purchases
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar_meta">
+                <ul class="sidebar">
+                    <li class="sidebar_item">
+                        <a href="{% url 'store:settings' %}" class="item_link">
+                          
+                            <span class="item_text">
+                                Settings
+                            </span>
+                        </a>
+                    </li>
+                    <li class="sidebar_item">
+                        <a href="{% url 'store:confirm-logout' %}" class="item_link">
+                            
+                            <span class="item_text">
+                                Logout
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dashboard Navbar -->
+    <div class="dashboard_navbar" id=mainNavBar>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+            <div class="container-fluid">
+                <div class="dashboard_sidebar_button">
+                    <button class="sidebar_button" id="sidebarToggleButton">
+                       
+                    </button>
+                </div>
+
+                <a class="navbar-brand nav_image" href="#">
+                    <img src="https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg?cs=srgb&dl=couleur-medical-medicament-tablettes-3683041.jpg&fm=jpg" alt="" class="img-responsive">
+                    <span class="nav_span" style="font-weight: 550;">
+                        Hi, {{ request.user.username }}!
+                    </span>
+                </a>
+
+                {% comment %} <div class="navbar-nav">
+                    <div class="navbar_flex">
+                        <a href="{% url 'store:confirm-logout' %}" class="nav-link logout">
+                           
+                            Logout
+                        </a>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </nav>
+    </div>
+</div>
